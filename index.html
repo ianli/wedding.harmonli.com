@@ -1,23 +1,26 @@
 ---
-layout: default
+# Add front matter, so Jekyll compiles Liquid variables.
 ---
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="home">
+  <title>Beth and Ian's Wedding Site</title>
 
-  <h1 class="page-heading">Posts</h1>
+  <script>
+    // Redirect http://www.harmonli.com/#savethedate
+    // to the Save the Date website.
+    if (window.location.hash == '#savethedate') {
+      window.location = 'http://savethedate.harmonli.com';
+    }
+  </script>
+</head>
+<body>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+  <!-- Javascripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</body>
+</html>
