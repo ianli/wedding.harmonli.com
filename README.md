@@ -1,8 +1,8 @@
 Beth and Ian's Wedding Site
 ===========================
 
-Setup
------
+Development Setup
+-----------------
 
 Create workspace
 
@@ -19,8 +19,8 @@ Create GitHub repository and associate with workspace
   > git push -u origin master
 
 Create gh-pages branch.
-Keep the master branch so we can commit versions without changing
-what is published.
+[Refer to this](http://brettterpstra.com/2012/09/26/github-tip-easily-sync-your-master-to-github-pages/), but keep the master branch
+so we can commit versions without changing what is published.
 
   > git branch gh-pages
   > git rebase master gh-pages
