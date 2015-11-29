@@ -1,0 +1,83 @@
+---
+# Add front matter, so Jekyll compiles Liquid variables.
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Beth and Ian's Wedding Site</title>
+
+  <!-- REDIRECTION: This should be first. -->
+  <script>
+    // Redirect http://www.harmonli.com/#savethedate
+    // to the Save the Date website.
+    if (window.location.hash == '#savethedate') {
+      window.location = 'http://savethedate.harmonli.com';
+    }
+  </script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="topnav">
+      <div class="topnav-col">
+        <a href="/">
+          Home
+        </a>
+      </div>
+
+      <div class="topnav-spacer">
+      </div>
+
+      <div class="topnav-col">
+        <a href="/story.html">
+          Our Story
+        </a>
+      </div>
+
+      <div class="topnav-spacer">
+      </div>
+
+      <div class="topnav-col">
+        <a href="/schedule.html">
+          Schedule
+        </a>
+      </div>
+
+      <div class="topnav-spacer">
+      </div>
+
+      <div class="topnav-col">
+        <a href="/stay.html">
+          Where to Stay
+        </a>
+      </div>
+
+      <div class="topnav-spacer">
+      </div>
+
+      <div class="topnav-col">
+        <a href="/rsvp.html"
+           class="topnav-box-link">
+          RSVP
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </div>
+
+  <!-- Javascripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</body>
+</html>
