@@ -20,62 +20,52 @@
   </script>
 
   <!-- Stylesheets -->
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 
-  <div class="container">
-    <div class="topnav">
-      <div class="topnav-col">
-        <a href="/">
-          Home
-        </a>
-      </div>
+  <!-- Body frame -->
+  <div class="bodyframe"></div>
 
-      <div class="topnav-spacer">
-      </div>
+  <ul class="sidenav">
+    <li>
+      <a href="/"
+         class="{% if page.url == '/index.html' %}active{% endif %}">
+        Home
+      </a>
+    </li>
 
-      <div class="topnav-col">
-        <a href="/story.html">
-          Our Story
-        </a>
-      </div>
+    <li>
+      <a href="/story.html"
+         class="{% if page.url == '/story.html' %}active{% endif %}">
+        Our Story
+      </a>
+    </li>
 
-      <div class="topnav-spacer">
-      </div>
+    <li>
+      <a href="/schedule.html"
+         class="{% if page.url == '/schedule.html' %}active{% endif %}">
+        Schedule
+      </a>
+    </li>
 
-      <div class="topnav-col">
-        <a href="/schedule.html">
-          Schedule
-        </a>
-      </div>
+    <li>
+      <a href="/stay.html"
+         class="{% if page.url == '/stay.html' %}active{% endif %}">
+        Where to Stay
+      </a>
+    </li>
 
-      <div class="topnav-spacer">
-      </div>
+    <li>
+      <a href="/rsvp.html"
+         class="{% if page.url == '/rsvp.html' %}active{% endif %}">
+        RSVP
+      </a>
+    </li>
+  </ul>
 
-      <div class="topnav-col">
-        <a href="/stay.html">
-          Where to Stay
-        </a>
-      </div>
-
-      <div class="topnav-spacer">
-      </div>
-
-      <div class="topnav-col">
-        <a href="/rsvp.html"
-           class="topnav-box-link">
-          RSVP
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="wrapper">
-      {{ content }}
-    </div>
-  </div>
+  {{ content }}
 
   <!-- Javascripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

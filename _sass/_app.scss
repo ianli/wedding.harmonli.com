@@ -1,61 +1,133 @@
+$bodyframe-width: 20px;
+
+$nautical-red: #FB561D;
+$nautical-yellow: #FFCA48;
+$nautical-light-blue: #B9DBEB;
+$nautical-dark-blue: #375066;
+
+//////////////////////////////
+// Body
+//
+
 body {
-  background-color: #44a9eb;
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  background-color: $nautical-dark-blue;
+
 }
 
-$topnav-columns: 5;
+//////////////////////////////
+// Bodyframe
+// The white frame around the content.
+//
 
-.topnav {
-  display: flex;
-  padding: 20px 0 40px;
+.bodyframe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: $bodyframe-width solid #fff;
+  z-index: 1;
+  // Avoid clicks on this element.
+  pointer-events: none;
+}
 
-  > .topnav-col {
-    flex-shrink: 0;
+//////////////////////////////
+// Sidenav
+//
+
+ul.sidenav {
+  list-style: none;
+  position: fixed;
+  top: $bodyframe-width + 16px;
+  left: $bodyframe-width;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    margin-bottom: 10px;
 
     > a {
       display: block;
-      padding: 10px 15px;
-      font-weight: bold;
-      text-align: center;
+      padding: 12px 20px;
+      width: 180px;
+      line-height: 24px;
+      background-color: rgba(255,255,255,0);
+      font-size: 20px;
+      font-weight: normal;
       text-transform: uppercase;
       text-decoration: none;
-      color: $clr-blue-800;
+      color: $nautical-yellow;
 
-      &:hover,
+      &:hover {
+        background-color: rgba(255,255,255,1.0);
+        color: $nautical-dark-blue;
+        transition: background-color .25s, color .25s;
+      }
+
       &:focus {
-        color: $clr-blue-900;
+        outline: none;
+      }
+
+      &.active {
+        background-color: rgba(255,255,255,1.0);
+        color: $nautical-red;
       }
     }
-  }
 
-  > .topnav-spacer {
-    flex-grow: 1;
   }
 }
 
-a.topnav-box-link {
-  color: #fff !important;
-  background-color: $clr-blue-800;
+//////////////////////////////
+// Container
+//
 
-  &:hover,
-  &:focus {
-    background-color: $clr-blue-900;
+@media (min-width: $screen-sm-min) {
+  body {
+    padding: 20px 20px 20px 200px;
+  }
+
+  .container {
+    width: 530px;
   }
 }
 
-.wrapper {
-  margin-bottom: 20px;
-  padding: 40px;
-  min-height: 500px;
-  background-color: #fff;
+//////////////////////////////
+// Headings
+//
 
-  h1:first-child {
-    margin-top: 0;
-  }
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  font-weight: normal;
+  color: $nautical-yellow;
 }
 
-@media (max-width: $screen-md-min) {
-  .wrapper {
-    margin-left: -($grid-gutter-width / 2);
-    margin-right: -($grid-gutter-width / 2);
-  }
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+h1:first-child {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  line-height: 64px;
+}
+
+//////////////////////////////
+// Lead quote
+//
+
+.leadquote {
+  margin-bottom: 80px;
+  padding-top: 12px;
+  line-height: 32px;
+  font-size: 20px;
+  font-style: italic;
+  border-top: 1px solid $nautical-red;
+  color: $nautical-red;
 }
