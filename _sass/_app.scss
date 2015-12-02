@@ -6,6 +6,8 @@ $nautical-light-blue: #B9DBEB;
 $nautical-dark-blue: #375066;
 $nautical-white: #fff;
 
+$content-width: 540px;
+
 //////////////////////////////
 // Body
 //
@@ -13,7 +15,7 @@ $nautical-white: #fff;
 body {
   position: relative;
   padding: $bodyframe-width;
-  padding-bottom: 60px;
+  padding-bottom: $bodyframe-width + 80px;
   width: 100%;
   background-color: $nautical-dark-blue;
 }
@@ -139,7 +141,7 @@ ul.sidenav {
     width: 100%;
     // .container has padding on left and right side.
     // Each side padding is 20px.
-    max-width: 540px + (20px * 2);
+    max-width: $content-width + (20px * 2);
   }
 }
 
@@ -148,7 +150,7 @@ ul.sidenav {
   .container {
     // .container has padding on left and right side
     // Each side padding has width ($grid-gutter-width / 2).
-    width: 540px + $grid-gutter-width;
+    width: $content-width + $grid-gutter-width;
   }
 }
 
@@ -164,7 +166,9 @@ h1, h2, h3, h4, h5, h6 {
   color: $nautical-yellow;
 }
 
-h1:first-child {
+
+
+h1 {
   margin-top: 80px;
   margin-bottom: 80px;
   line-height: 64px;
@@ -173,10 +177,36 @@ h1:first-child {
 
 h2 {
   font-size: 48px;
+  line-height: 48px;
 }
 
 p {
+  margin-bottom: 0;
   color: $nautical-dark-blue;
+
+  //////////////////////////////
+  // Links
+  //
+
+  a {
+    color: $nautical-red;
+  }
+
+  //////////////////////////////
+  // Subheadings
+  //
+
+  &.subhead1 {
+    margin-bottom: 0;
+    line-height: 48px;
+    font-size: 32px;
+  }
+
+  &.subhead2 {
+    margin-bottom: 0;
+    line-height: 36px;
+    font-size: 24px;
+  }
 }
 
 //////////////////////////////
@@ -186,6 +216,7 @@ p {
 .leadquote {
   margin-bottom: 80px;
   padding-top: 12px;
+  max-width: $content-width;
   line-height: 32px;
   font-family: $headings-font-family;
   font-size: 20px;
@@ -216,14 +247,11 @@ p {
   width: 100%;
 }
 
-.space-32 {
-  @extend %space;
-  height: 32px;
-}
-
-.space-80 {
-  @extend %space;
-  height: 80px;
+@each $height in 8, 12, 16, 24, 32, 48, 64, 80 {
+  .space-#{$height} {
+    @extend %space;
+    height: #{$height}px;
+  }
 }
 
 //////////////////////////////
@@ -269,6 +297,7 @@ body.page-story {
 // Heading: red
 // Lead: dark-blue
 // Text: dark-blue
+// Link: red
 body.page-schedule {
   background-color: $nautical-light-blue;
 
@@ -284,12 +313,20 @@ body.page-schedule {
     }
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3 {
     color: $nautical-red;
+  }
+
+  h4, h5, h6 {
+    color: $nautical-dark-blue;
   }
 
   .leadquote {
     border-top-color: $nautical-dark-blue;
     color: $nautical-dark-blue;
+  }
+
+  p a {
+    color: $nautical-red;
   }
 }
