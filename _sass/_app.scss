@@ -181,7 +181,7 @@ h2 {
 }
 
 p {
-  margin-bottom: 0;
+  margin-bottom: 16px;
   color: $nautical-dark-blue;
 
   //////////////////////////////
@@ -289,6 +289,10 @@ body.page-story {
 
   p {
     color: $nautical-dark-blue;
+
+    a {
+      color: $nautical-red;
+    }
   }
 }
 
@@ -326,7 +330,11 @@ body.page-schedule {
     color: $nautical-dark-blue;
   }
 
-  p a {
-    color: $nautical-red;
+  p {
+    color: $nautical-dark-blue;
+
+    a {
+      color: $nautical-red;
+    }
   }
 }
