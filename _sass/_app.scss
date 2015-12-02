@@ -11,10 +11,9 @@ $nautical-dark-blue: #375066;
 
 body {
   position: relative;
-  padding: 20px;
+  padding: $bodyframe-width;
   width: 100%;
   background-color: $nautical-dark-blue;
-
 }
 
 //////////////////////////////
@@ -22,7 +21,8 @@ body {
 // The white frame around the content.
 //
 
-.bodyframe {
+body:after {
+  content: ' ';
   position: fixed;
   top: 0;
   left: 0;
@@ -84,13 +84,27 @@ ul.sidenav {
 // Container
 //
 
-@media (min-width: $screen-sm-min) {
+// Small devices: Tablets
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
   body {
-    padding: 20px 20px 20px 200px;
+    padding-left: 200px;
   }
 
   .container {
-    width: 530px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    // .container has padding on left and right side
+    max-width: 540px + (20px * 2);
+  }
+}
+
+// Medium and large devices
+@media (min-width: $screen-md-min) {
+  .container {
+    // .container has padding on left and right side
+    // with width $grid-gutter-width / 2.
+    width: 540px + $grid-gutter-width;
   }
 }
 
