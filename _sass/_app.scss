@@ -51,6 +51,7 @@ ul.sidenav {
   left: $bodyframe-width;
   margin: 0;
   padding: 0;
+  font-family: $headings-font-family;
 
   > li {
     margin-bottom: 10px;
@@ -157,7 +158,6 @@ h2 {
 }
 
 p {
-  font-family: Helvetica, Arial, sans-serif;
   color: $nautical-dark-blue;
 }
 
@@ -169,6 +169,7 @@ p {
   margin-bottom: 80px;
   padding-top: 12px;
   line-height: 32px;
+  font-family: $headings-font-family;
   font-size: 20px;
   font-style: italic;
   border-top: 1px solid $nautical-red;
