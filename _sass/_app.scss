@@ -4,6 +4,7 @@ $nautical-red: #FB561D;
 $nautical-yellow: #FFCA48;
 $nautical-light-blue: #B9DBEB;
 $nautical-dark-blue: #375066;
+$nautical-white: #fff;
 
 //////////////////////////////
 // Body
@@ -29,10 +30,14 @@ body:after {
   left: 0;
   right: 0;
   bottom: 0;
-  border: $bodyframe-width solid #fff;
+  border: $bodyframe-width solid $nautical-white;
   z-index: 1;
   // Avoid clicks on this element.
   pointer-events: none;
+
+  @media (max-width: $screen-xs-max) {
+    border-width: 16px;
+  }
 }
 
 //////////////////////////////
@@ -55,7 +60,7 @@ ul.sidenav {
       padding: 12px 20px;
       width: 180px;
       line-height: 24px;
-      background-color: rgba(255,255,255,0);
+      background-color: rgba($nautical-white,0);
       font-size: 20px;
       font-weight: normal;
       text-transform: uppercase;
@@ -63,7 +68,7 @@ ul.sidenav {
       color: $nautical-yellow;
 
       &:hover {
-        background-color: rgba(255,255,255,1.0);
+        background-color: rgba($nautical-white,1.0);
         color: $nautical-dark-blue;
         transition: background-color .25s, color .25s;
       }
@@ -73,11 +78,29 @@ ul.sidenav {
       }
 
       &.active {
-        background-color: rgba(255,255,255,1.0);
+        background-color: rgba($nautical-white,1.0);
         color: $nautical-red;
       }
     }
 
+  }
+
+  @media (max-width: $screen-xs-max) {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 8px;
+    width: 100%;
+    text-align: center;
+
+    > li {
+      display: inline-block;
+
+      > a {
+        display: inline-block;
+        width: auto;
+      }
+    }
   }
 }
 
@@ -134,7 +157,7 @@ h2 {
 }
 
 p {
-  font-family: Roboto;
+  font-family: Helvetica, Arial, sans-serif;
   color: $nautical-dark-blue;
 }
 
@@ -173,13 +196,14 @@ p {
 }
 
 //////////////////////////////
-// Page color
+// Page colors
 //
 
 // Background: yellow
+// Sidenav: dark-blue
 // Heading: dark-blue
 // Lead: red
-// Text: white
+// Text: dark-blue
 body.page-story {
   background-color: $nautical-yellow;
 
@@ -195,12 +219,46 @@ body.page-story {
     }
   }
 
+  .leadquote {
+    border-top-color: $nautical-red;
+    color: $nautical-red;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     color: $nautical-dark-blue;
   }
 
-  .leadquote {
-    border-top-color: $nautical-red;
+  p {
+    color: $nautical-dark-blue;
+  }
+}
+
+// Background: light-blue
+// Sidenav: red
+// Heading: red
+// Lead: dark-blue
+// Text: dark-blue
+body.page-schedule {
+  background-color: $nautical-light-blue;
+
+  ul.sidenav > li > a {
     color: $nautical-red;
+
+    &:hover {
+      color: $nautical-red;
+    }
+
+    &.active {
+      color: $nautical-dark-blue;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $nautical-red;
+  }
+
+  .leadquote {
+    border-top-color: $nautical-dark-blue;
+    color: $nautical-dark-blue;
   }
 }
