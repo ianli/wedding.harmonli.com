@@ -12,6 +12,7 @@ $nautical-dark-blue: #375066;
 body {
   position: relative;
   padding: $bodyframe-width;
+  padding-bottom: 60px;
   width: 100%;
   background-color: $nautical-dark-blue;
 }
@@ -94,7 +95,8 @@ ul.sidenav {
     padding-left: 20px;
     padding-right: 20px;
     width: 100%;
-    // .container has padding on left and right side
+    // .container has padding on left and right side.
+    // Each side padding is 20px.
     max-width: 540px + (20px * 2);
   }
 }
@@ -103,7 +105,7 @@ ul.sidenav {
 @media (min-width: $screen-md-min) {
   .container {
     // .container has padding on left and right side
-    // with width $grid-gutter-width / 2.
+    // Each side padding has width ($grid-gutter-width / 2).
     width: 540px + $grid-gutter-width;
   }
 }
@@ -113,12 +115,17 @@ ul.sidenav {
 //
 
 h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
   text-transform: uppercase;
   font-weight: normal;
   color: $nautical-yellow;
 }
 
-h1 {
+h1:first-child {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  line-height: 64px;
   font-size: 64px;
 }
 
@@ -126,10 +133,9 @@ h2 {
   font-size: 48px;
 }
 
-h1:first-child {
-  margin-top: 80px;
-  margin-bottom: 80px;
-  line-height: 64px;
+p {
+  font-family: Roboto;
+  color: $nautical-dark-blue;
 }
 
 //////////////////////////////
@@ -144,4 +150,57 @@ h1:first-child {
   font-style: italic;
   border-top: 1px solid $nautical-red;
   color: $nautical-red;
+}
+
+//////////////////////////////
+// Spacers
+//
+
+%space {
+  display: block;
+  clear: both;
+  width: 100%;
+}
+
+.space-32 {
+  @extend %space;
+  height: 32px;
+}
+
+.space-80 {
+  @extend %space;
+  height: 80px;
+}
+
+//////////////////////////////
+// Page color
+//
+
+// Background: yellow
+// Heading: dark-blue
+// Lead: red
+// Text: white
+body.page-story {
+  background-color: $nautical-yellow;
+
+  ul.sidenav > li > a {
+    color: $nautical-dark-blue;
+
+    &:hover {
+      color: $nautical-dark-blue;
+    }
+
+    &.active {
+      color: $nautical-red;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $nautical-dark-blue;
+  }
+
+  .leadquote {
+    border-top-color: $nautical-red;
+    color: $nautical-red;
+  }
 }
