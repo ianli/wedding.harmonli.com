@@ -43,24 +43,6 @@ body:after {
 }
 
 //////////////////////////////
-// Name badge
-//
-
-.namebadge {
-  float: left;
-  margin-top: 4px;
-  margin-right: 12px;
-  width: 56px + 4px + 4px;
-  line-height: 56px;
-  font-family: $headings-font-family;
-  font-size: 20px;
-  text-align: center;
-  color: $nautical-red;
-  border: 4px solid $nautical-red;
-  text-transform: uppercase;
-}
-
-//////////////////////////////
 // Sidenav
 //
 
@@ -235,6 +217,24 @@ p {
   background-color: rgba(0, 0, 0, .25);
   background-size: cover;
   background-position: center center;
+}
+
+//////////////////////////////
+// Name badge
+//
+
+.namebadge {
+  float: left;
+  margin-top: 4px;
+  margin-right: 12px;
+  width: 56px + 4px + 4px;
+  line-height: 56px;
+  font-family: $headings-font-family;
+  font-size: 20px;
+  text-align: center;
+  color: $nautical-red;
+  border: 4px solid $nautical-red;
+  text-transform: uppercase;
 }
 
 //////////////////////////////
