@@ -7,6 +7,28 @@ $nautical-dark-blue: #375066;
 $nautical-white: #fff;
 $nautical-lightgray: $clr-grey-100; // Material Grey 100
 
+%red-leadquote-link {
+  text-decoration: none;
+  color: $nautical-red;
+  background-image: linear-gradient(
+      rgba($nautical-red, .5) 33%,
+      rgba($nautical-red, 0) 67%);
+  background-position: 0px 22px;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+}
+
+%darkblue-leadquote-link {
+  text-decoration: none;
+  color: $nautical-dark-blue;
+  background-image: linear-gradient(
+      rgba($nautical-dark-blue, .5) 33%,
+      rgba($nautical-dark-blue, 0) 67%);
+  background-position: 0px 22px;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+}
+
 $content-width: 540px;
 
 //////////////////////////////
@@ -227,6 +249,12 @@ a.button {
   font-style: italic;
   border-top: 1px solid $nautical-red;
   color: $nautical-red;
+
+  a,
+  a:hover,
+  a:focus {
+    @extend %red-leadquote-link;
+  }
 }
 
 //////////////////////////////
@@ -239,24 +267,6 @@ a.button {
   background-color: rgba(0, 0, 0, .25);
   background-size: cover;
   background-position: center center;
-}
-
-//////////////////////////////
-// Name badge
-//
-
-.namebadge {
-  float: left;
-  margin-top: 4px;
-  margin-right: 12px;
-  width: 56px + 4px + 4px;
-  line-height: 56px;
-  font-family: $headings-font-family;
-  font-size: 20px;
-  text-align: center;
-  color: $nautical-red;
-  border: 4px solid $nautical-red;
-  text-transform: uppercase;
 }
 
 //////////////////////////////
@@ -329,6 +339,12 @@ body.page-story {
   .leadquote {
     border-top-color: $nautical-red;
     color: $nautical-red;
+
+    a,
+    a:hover,
+    a:focus {
+      @extend %red-leadquote-link;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -378,6 +394,12 @@ body.page-schedule {
   .leadquote {
     border-top-color: $nautical-dark-blue;
     color: $nautical-dark-blue;
+
+    a,
+    a:hover,
+    a:focus {
+      @extend %darkblue-leadquote-link;
+    }
   }
 
   p {
@@ -424,11 +446,15 @@ body.page-contact {
   .leadquote {
     border-top-color: $nautical-dark-blue;
     color: $nautical-dark-blue;
+
+    a,
+    a:hover,
+    a:focus {
+      @extend %darkblue-leadquote-link;
+    }
   }
 
   p {
-    // color: $nautical-dark-blue;
-
     a,
     a:hover,
     a:focus {
