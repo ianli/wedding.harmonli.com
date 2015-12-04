@@ -19,6 +19,7 @@ body {
   padding-bottom: $bodyframe-width + 80px;
   width: 100%;
   background-color: $nautical-dark-blue;
+  color: $nautical-white;
 }
 
 //////////////////////////////
@@ -165,7 +166,6 @@ h2 {
 
 p {
   margin-bottom: 16px;
-  color: $nautical-white;
 
   //////////////////////////////
   // Links
@@ -298,6 +298,10 @@ a.button {
   }
 }
 
+.table > tbody > tr > td {
+  border-top: 1px solid rgba(#fff, .1);
+}
+
 //////////////////////////////
 // Page colors
 //
@@ -395,6 +399,7 @@ body.page-schedule {
 // Link: red
 body.page-contact {
   background-color: $nautical-lightgray;
+  color: $nautical-dark-blue;
 
   ul.sidenav > li > a {
     color: $nautical-red;
@@ -422,7 +427,7 @@ body.page-contact {
   }
 
   p {
-    color: $nautical-dark-blue;
+    // color: $nautical-dark-blue;
 
     a,
     a:hover,
