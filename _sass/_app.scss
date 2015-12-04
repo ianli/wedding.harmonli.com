@@ -277,6 +277,28 @@ a.button {
 }
 
 //////////////////////////////
+// Avatars
+//
+
+.avatar {
+  margin-right: 16px;
+  width: 72px;
+  height: 72px;
+  border-radius: 72px;
+  background-color: rgba(#000, .5);
+  background-size: cover;
+  background-position: center;
+
+  &.avatar-ian {
+    background-image: url(../images/avatar-ian.jpg);
+  }
+
+  &.avatar-beth {
+    background-image: url(../images/avatar-beth.jpg);
+  }
+}
+
+//////////////////////////////
 // Page colors
 //
 
@@ -407,5 +429,19 @@ body.page-contact {
     a:focus {
       color: $nautical-dark-blue;
     }
+  }
+
+  p.subhead2 {
+    a,
+    a:hover,
+    a:focus {
+      text-decoration: none;
+      background-image: linear-gradient(
+          rgba($nautical-dark-blue, 1) 25%,
+          rgba($nautical-dark-blue, 0) 50%);
+      background-position: 0px 28px;
+      background-repeat: repeat-x;
+      background-size: 2px 2px;
+    }   
   }
 }
