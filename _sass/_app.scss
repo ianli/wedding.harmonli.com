@@ -5,6 +5,7 @@ $nautical-yellow: #FFCA48;
 $nautical-light-blue: #B9DBEB;
 $nautical-dark-blue: #375066;
 $nautical-white: #fff;
+$nautical-lightgray: $clr-grey-100; // Material Grey 100
 
 $content-width: 540px;
 
@@ -360,6 +361,51 @@ body.page-schedule {
     a:hover,
     a:focus {
       color: $nautical-red;
+    }
+  }
+}
+
+// Background: lightgray
+// Sidenav: red
+// Heading: red
+// Lead: dark-blue
+// Text: dark-blue
+// Link: red
+body.page-contact {
+  background-color: $nautical-lightgray;
+
+  ul.sidenav > li > a {
+    color: $nautical-red;
+
+    &:hover {
+      color: $nautical-red;
+    }
+
+    &.active {
+      color: $nautical-dark-blue;
+    }
+  }
+
+  h1, h2, h3 {
+    color: $nautical-red;
+  }
+
+  h4, h5, h6 {
+    color: $nautical-dark-blue;
+  }
+
+  .leadquote {
+    border-top-color: $nautical-dark-blue;
+    color: $nautical-dark-blue;
+  }
+
+  p {
+    color: $nautical-dark-blue;
+
+    a,
+    a:hover,
+    a:focus {
+      color: $nautical-dark-blue;
     }
   }
 }
