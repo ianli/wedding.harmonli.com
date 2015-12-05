@@ -1,4 +1,24 @@
+/**
+ * Stylesheet for Beth and Ian's Wedding Site
+ *
+ * Copyright 2015 Ian Li (ianli@ianli.com)
+ */
+
+//////////////////////////////
+// Sizes
+//
+
 $bodyframe-width: 20px;
+$bodyframe-width-xs: 16px;
+
+$content-width: 540px;
+
+// Extra-extra small devices: before iPhone 6
+$screen-xxs-max: 375px;
+
+//////////////////////////////
+// Colors
+//
 
 $nautical-red: #FB561D;
 $nautical-yellow: #FFCA48;
@@ -29,24 +49,26 @@ $nautical-lightgray: $clr-grey-100; // Material Grey 100
   background-size: 2px 2px;
 }
 
-$content-width: 540px;
+//////////////////////////////
+// Body
+//
 
 html {
   height: 100%;
 }
 
-//////////////////////////////
-// Body
-//
-
 body {
   position: relative;
   padding: $bodyframe-width;
-  padding-bottom: $bodyframe-width + 80px;
   width: 100%;
   height: 100%;
   background-color: $nautical-dark-blue;
   color: $nautical-white;
+
+  // Extra small devices: phone
+  @media (max-width: $screen-xs-max) {
+    padding: $bodyframe-width-xs;
+  }
 }
 
 //////////////////////////////
@@ -66,8 +88,9 @@ body:after {
   // Avoid clicks on this element.
   pointer-events: none;
 
+  // Extra small devices: phone
   @media (max-width: $screen-xs-max) {
-    border-width: 16px;
+    border-width: $bodyframe-width-xs;
   }
 }
 
@@ -78,6 +101,7 @@ body:after {
 ul.sidenav {
   list-style: none;
   position: fixed;
+  z-index: 1;
   top: $bodyframe-width + 16px;
   left: $bodyframe-width;
   margin: 0;
@@ -85,7 +109,7 @@ ul.sidenav {
   font-family: $headings-font-family;
 
   > li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 
     > a {
       display: block;
@@ -117,19 +141,34 @@ ul.sidenav {
 
   }
 
+  // XX Small devices
+  @media (max-width: $screen-xxs-max) {
+    position: relative;
+    margin-top: 8px;
+
+    > li {
+      margin-bottom: 8px;
+
+      > a {
+        padding: 8px 16px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  // Extra small devices: phones
   @media (max-width: $screen-xs-max) {
     position: relative;
-    top: 0;
-    left: 0;
-    margin-top: 8px;
+    top: initial;
+    left: initial;
     width: 100%;
+    margin-top: 8px;
     text-align: center;
 
     > li {
       display: inline-block;
 
       > a {
-        display: inline-block;
         width: auto;
       }
     }
@@ -149,6 +188,7 @@ ul.sidenav {
   .container {
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 80px;
     width: 100%;
     // .container has padding on left and right side.
     // Each side padding is 20px.
@@ -176,8 +216,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   color: $nautical-yellow;
 }
-
-
 
 h1 {
   margin-top: 80px;
@@ -318,17 +356,23 @@ a.button {
 }
 
 //////////////////////////////
-// Page colors
+// Page specific settings
+//
 // Default page colors are for the 'Where to Stay' page.
-// The following are page color settings for the other pages.
+// The following are color settings for the other pages.
 //
 
+// Index Page
+//
 // Background: dark-blue
 // Sidenav: white
 // Heading: N/A
 // Lead: N/A
 // Text: N/A
 body.page-index {
+  display: flex;
+  flex-direction: column;
+
   background-color: $nautical-dark-blue;
   background-image: url(/images/bg-map.png);
   background-size: cover;
@@ -348,26 +392,27 @@ body.page-index {
   }
 }
 
+// Banner that appears on home page
+
+#page-index-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  width: 100%;
+  padding: 16px;
+}
+
 #page-index-banner {
-  margin: 80px auto auto;
+  display: block;
+  margin: auto;
   max-width: 420px;
   width: 100%;
   box-shadow: 0px 4px 20px rgba(0,0,0,.25);
 }
 
-// Medium and large devices
-@media (min-width: $screen-md-min) {
-  #page-index-banner-parent {
-    height: 100%;
-    display: flex;
-  }
-
-  #page-index-banner {
-    margin: auto;
-  }
-}
-
-
+// Story Page
+//
 // Background: yellow
 // Sidenav: dark-blue
 // Heading: dark-blue
@@ -414,6 +459,8 @@ body.page-story {
   }
 }
 
+// Schedule Page
+//
 // Background: light-blue
 // Sidenav: red
 // Heading: red
@@ -461,6 +508,8 @@ body.page-schedule {
   }
 }
 
+// Contact Page
+//
 // Background: lightgray
 // Sidenav: red
 // Heading: red
