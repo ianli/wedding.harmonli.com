@@ -13,9 +13,6 @@ $bodyframe-width-xs: 16px;
 
 $content-width: 540px;
 
-// Extra-extra small devices: before iPhone 6
-$screen-xxs-max: 375px - 1;
-
 //////////////////////////////
 // Colors
 //
@@ -141,21 +138,6 @@ ul.sidenav {
 
   }
 
-  // XX Small devices
-  @media (max-width: $screen-xxs-max) {
-    position: relative;
-    margin-top: 8px;
-
-    > li {
-      margin-bottom: 8px;
-
-      > a {
-        padding: 8px 16px;
-        font-size: 16px;
-      }
-    }
-  }
-
   // Extra small devices: phones
   @media (max-width: $screen-xs-max) {
     position: relative;
@@ -167,9 +149,12 @@ ul.sidenav {
 
     > li {
       display: inline-block;
+      margin-bottom: 8px;
 
       > a {
+        padding: 8px 16px;
         width: auto;
+        font-size: 16px;
       }
     }
   }
@@ -404,10 +389,16 @@ body.page-index {
 }
 
 #page-index-banner {
+  // IMPORTANT
+  // Specify flex-grow and flex-shrink as 0, so that this element
+  // is not resized depending on the size of #page-index-content.
+  flex-grow: 0;
+  flex-shrink: 0;
   display: block;
   margin: auto;
-  max-width: 420px;
   width: 100%;
+  max-width: 450px;
+  background-color: #fff;
   box-shadow: 0px 4px 20px rgba(0,0,0,.25);
 
   @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
