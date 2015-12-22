@@ -427,7 +427,9 @@ body.page-index {
 // Heading: dark-blue
 // Lead: red
 // Text: dark-blue
+// Link: red
 body.page-story {
+  color: $nautical-dark-blue;
   background-color: $nautical-yellow;
 
   ul.sidenav > li > a {
@@ -477,6 +479,7 @@ body.page-story {
 // Text: dark-blue
 // Link: red
 body.page-schedule {
+  color: $nautical-dark-blue;
   background-color: $nautical-light-blue;
 
   ul.sidenav > li > a {
@@ -526,8 +529,8 @@ body.page-schedule {
 // Text: dark-blue
 // Link: red
 body.page-contact {
-  background-color: $nautical-lightgray;
   color: $nautical-dark-blue;
+  background-color: $nautical-lightgray;
 
   ul.sidenav > li > a {
     color: $nautical-red;
