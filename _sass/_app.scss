@@ -350,6 +350,10 @@ a.button {
   }
 }
 
+//////////////////////////////
+// Table
+//
+
 .table > tbody > tr > td {
   border-top: 1px solid rgba(#fff, .1);
 }
@@ -468,6 +472,10 @@ body.page-story {
       color: $nautical-red;
     }
   }
+
+  .table > tbody > tr > td {
+    border-top: 1px solid rgba($nautical-dark-blue, .1);
+  }
 }
 
 // Schedule Page
@@ -517,6 +525,10 @@ body.page-schedule {
     a:focus {
       color: $nautical-red;
     }
+  }
+
+  .table > tbody > tr > td {
+    border-top: 1px solid rgba($nautical-dark-blue, .1);
   }
 }
 
@@ -579,5 +591,9 @@ body.page-contact {
       background-repeat: repeat-x;
       background-size: 2px 2px;
     }   
+  }
+
+  .table > tbody > tr > td {
+    border-top: 1px solid rgba($nautical-dark-blue, .1);
   }
 }
