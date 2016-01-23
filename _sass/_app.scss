@@ -13,6 +13,8 @@ $bodyframe-width-xs: 16px;
 
 $content-width: 540px;
 
+$link-width: 180px;
+
 //////////////////////////////
 // Colors
 //
@@ -112,7 +114,7 @@ ul.sidenav {
     > a {
       display: block;
       padding: 12px 20px;
-      width: 180px;
+      width: $link-width;
       line-height: 24px;
       background-color: rgba($nautical-white,0);
       font-size: 20px;
@@ -389,16 +391,21 @@ body.page-index {
 
   ul.sidenav > li > a {
     color: $nautical-yellow;
-    background-color: rgba($nautical-dark-blue, .5);
+    text-shadow:
+        0 0 5px $nautical-dark-blue,
+        0 0 10px $nautical-dark-blue,
+        0 0 15px $nautical-dark-blue;
 
     &:hover {
       color: $nautical-dark-blue;
       background-color: $nautical-white;
+      text-shadow: none;
     }
 
     &.active {
       color: $nautical-red;
       background-color: $nautical-white;
+      text-shadow: none;
     }
   }
 }
