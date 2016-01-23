@@ -384,13 +384,16 @@ body.page-index {
 
   ul.sidenav > li > a {
     color: $nautical-yellow;
+    background-color: rgba($nautical-dark-blue, .5);
 
     &:hover {
       color: $nautical-dark-blue;
+      background-color: $nautical-white;
     }
 
     &.active {
       color: $nautical-red;
+      background-color: $nautical-white;
     }
   }
 }
