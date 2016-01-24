@@ -328,7 +328,7 @@ a.button {
   width: 100%;
 }
 
-@each $height in 8, 12, 16, 24, 32, 48, 64, 80 {
+@each $height in 8, 12, 16, 24, 32, 48, 64, 80, 96 {
   .space-#{$height} {
     @extend %space;
     height: #{$height}px;
