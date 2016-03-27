@@ -597,7 +597,7 @@ body.page-contact {
     a,
     a:hover,
     a:focus {
-      color: $nautical-dark-blue;
+      color: $nautical-red;
     }
   }
 
@@ -605,6 +605,7 @@ body.page-contact {
     a,
     a:hover,
     a:focus {
+      color: $nautical-dark-blue;
       text-decoration: none;
       background-image: linear-gradient(
           rgba($nautical-dark-blue, 1) 25%,
